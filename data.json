@@ -1,0 +1,9 @@
+{
+"firstname":"nadim",
+"lastname":"bhati",
+"email":"nadimbhati77@gmail.com",
+"password":"$2b$11$oLNelS/DQfbUuORnoxn3/OU0JAPYs1pStVRk3Glzi1tWe/D/CpuI2",
+"age":20,
+"janratetoken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiU3VuIE9jdCAyMyAyMDIyIDEzOjA2OjM0IEdNVCswNTMwIChJbmRpYSBTdGFuZGFyZCBUaW1lKSIsInVzZXJJZCI6MTAsImlhdCI6MTY2NjUxMDU5NH0.jptI6NJH9nHpP4f76gFM8U3j1MKsCt_cZ4UztEqQZNU",
+"Vtoken":{"time":"Sun Oct 23 2022 13:06:34 GMT+0530 (India Standard Time)","userId":10,"iat":1666510594}
+}
