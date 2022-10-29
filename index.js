@@ -5,6 +5,7 @@ import UserRouter from "./routes/user.routes.js";
 import cate from "./routes/category.ruotes.js";
 import SubCate from "./routes/subCategory.routes.js";
 import products from "./routes/product.routes.js";
+import { config } from 'dotenv';
 
 //import  fs  from "fs";
 
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(router);
 connectDB();
+config();
 app.use(UserRouter);
 app.use(cate);
 app.use(SubCate);
@@ -70,6 +72,6 @@ app.use(products);
 //     })
 // })
 
-app.listen(9000,(req,res)=>{
+app.listen(process.env.PORT||9003,(req,res)=>{
     console.log("ur server is working")
 })
