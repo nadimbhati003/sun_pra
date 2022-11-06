@@ -95,11 +95,11 @@ export const login = async(req,res)=>{
 
 
 export const ResendOtp = async (req,res)=>{
-    //res.send("yes !")
+    res.send("yes !")
     var otp = Math.floor(1000 + Math.random()*9000)
     console.log("otp---------",otp)
     req.body.otp = otp
-    //res.send(otp)
+    res.send(otp)
     var data = await User.findByIdAndUpdate({_id:req.body.id},req.body)
     if(data){
         res.send({
