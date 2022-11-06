@@ -29,11 +29,20 @@ export const userSchema = new mongoose.Schema({
     token:{
         type:String,
         required:false,
+    },
+    isnumber_verified:{
+        type:Boolean,
+        required:false,
+        default:false
+    },
+    otp:{
+        type:Number,
+        required:true,
     }
 
 })
 
-const User = mongoose.model("singupUsers",userSchema);
+const User = mongoose.model("users",userSchema);
 
 export default User
   

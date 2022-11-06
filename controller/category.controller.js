@@ -42,12 +42,13 @@ export const Categorycreate = async (req,res)=>{
 
 export const getAlldata = async (req,res)=>{
     //res.send("yes !")
-    var getalldata = await Category.find({status:"Active"});
-    if(getalldata.length > 0){
+    try{
+    var data = await Category.find({status:"Active"})
+    if(data.length > 0){
         res.send({
             status:true,
             msg:"data get succesfully.",
-            data:getalldata
+            data:data.length
         })
     }else{
         res.send({
@@ -57,6 +58,13 @@ export const getAlldata = async (req,res)=>{
         })
     }
     //res.send(getalldata)
+}catch(err){
+    res.send({
+        status:false,
+        msg:"something wrong with req.",
+        data:err
+    })
+}
 }
 
 export const update = async (req,res)=>{

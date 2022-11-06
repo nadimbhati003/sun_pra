@@ -72,6 +72,6 @@ app.use(products);
 //     })
 // })
 
-app.listen(process.env.PORT||9003,(req,res)=>{
+app.listen(process.env.PORT||3000,(req,res)=>{
     console.log("ur server is working")
 })

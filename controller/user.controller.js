@@ -65,7 +65,7 @@ export const singup = async (req,res)=>{
 export const login = async(req,res)=>{
     //res.send("login ")
     var getUserdata = await User.findOne({email:req.body.email})
-     //res.send(getUserdata)
+  //  res.send(getUserdata)
      if (getUserdata){
         let checkpassword = await bcrypt.compare(req.body.password,getUserdata.password)
         if (checkpassword){
@@ -94,7 +94,25 @@ export const login = async(req,res)=>{
 }
 
 
-
+export const ResendOtp = async (req,res)=>{
+    //res.send("yes !")
+    var otp = 1234
+    //res.send(otp)
+    var data = await User.findByIdAndUpdate({_id:req.body.id},req.body)
+    if(data){
+        res.send({
+            status:true,
+            msg:"otp send succesfully",
+            data:data
+        })
+    }else{
+        res.send({
+            status:false,
+            msg:"something wrong in code",
+            data:{}
+        })
+    }
+}
 
 
 export const getAlldata = async (req,res)=>{
