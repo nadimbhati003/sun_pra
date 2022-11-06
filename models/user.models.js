@@ -37,7 +37,7 @@ export const userSchema = new mongoose.Schema({
     },
     otp:{
         type:Number,
-        required:true,
+        required:false,
     }
 
 })
