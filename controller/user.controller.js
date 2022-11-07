@@ -64,8 +64,8 @@ export const singup = async (req,res)=>{
 
 export const login = async(req,res)=>{
     //res.send("login ")
-    var getUserdata = await User.findOne({email:req.body.email})
-  //  res.send(getUserdata)
+    var getUserdata = await User.findOne({firstname:req.body.firstname})
+    //res.send(getUserdata)
      if (getUserdata){
         let checkpassword = await bcrypt.compare(req.body.password,getUserdata.password)
         if (checkpassword){
