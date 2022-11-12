@@ -37,9 +37,12 @@ export const singup = async (req,res)=>{
                 data:{}
             })
         }else{
+            var data = (req.body)
+            var otp = Math.floor(1000+Math.random()*9000)
             const passwordHash = await bcrypt.hash(req.body.password,10);
             //res.send(passwordHash)
-            req.body.password = passwordHash
+            data.password = passwordHash
+            data.otp = otp
             var user = await User.create(req.body)
             if(user){
                 user.token = jwt.sign({time:Date(),userId:11},"try")

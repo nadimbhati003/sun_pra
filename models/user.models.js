@@ -1,14 +1,11 @@
 import mongoose from "mongoose";
 
 export const userSchema = new mongoose.Schema({
-    firstname:{
+    username:{
         type:String,
         required:true,
     },
-    lastname:{
-        type:String,
-        required:true,
-    },
+    
     email:{
         type:String,
         required:true,
@@ -17,10 +14,8 @@ export const userSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    age:{
-        type:Number,
-        required:true,
-    },
+   
+    
     status:{
         type:String,
         enum:["Active","Deactive"],
